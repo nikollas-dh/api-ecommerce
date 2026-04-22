@@ -22,7 +22,7 @@ public record DadosEndereco(
         @NotBlank
         String uf,
 
-        @Pattern(regexp = "[a-z][A-Z]:{2}")
+        @Pattern(regexp = "[a-z][A-Z]{2}")
         String numero,
         String complemento
 

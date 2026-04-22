@@ -14,8 +14,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 
 
-@Embedded
-Endereco endereco;
+
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +25,9 @@ public class Cliente {
     private String cpf;
     private String telefone;
     private boolean ativo;
+
+    @Embedded
+    Endereco endereco;
 
     public Cliente(DadosCadastroCliente dados){
         this.nome = dados.nome();
