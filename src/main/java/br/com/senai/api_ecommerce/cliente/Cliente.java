@@ -1,5 +1,6 @@
 package br.com.senai.api_ecommerce.cliente;
 
+import br.com.senai.api_ecommerce.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -12,6 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 
+
+@Embedded
+Endereco endereco;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

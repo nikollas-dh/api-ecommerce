@@ -1,5 +1,6 @@
 package br.com.senai.api_ecommerce.cliente;
 
+import br.com.senai.api_ecommerce.endereco.DadosEndereco;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -20,6 +21,8 @@ public record DadosCadastroCliente(
         String cpf,
 
         @Size(max=20)
-        String telefone
+        String telefone,
+
+        DadosEndereco endereco
 ) {
 }
