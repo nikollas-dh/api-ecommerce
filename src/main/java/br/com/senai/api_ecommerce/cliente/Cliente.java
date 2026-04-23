@@ -35,6 +35,7 @@ public class Cliente {
         this.cpf = dados.cpf();
         this.telefone = dados.telefone();
         this.ativo = true;
+        this.endereco = new Endereco(dados.endereco());
     }
 
     public void  atualizarCliente(DadosAtualizarCliente dados){
