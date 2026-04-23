@@ -1,5 +1,6 @@
 package br.com.senai.api_ecommerce.cliente;
 
+import br.com.senai.api_ecommerce.endereco.DadosEndereco;
 import br.com.senai.api_ecommerce.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,7 @@ public class Cliente {
         this.telefone = dados.telefone();
         this.ativo = true;
         this.endereco = new Endereco(dados.endereco());
+
     }
 
     public void  atualizarCliente(DadosAtualizarCliente dados){
@@ -45,6 +47,9 @@ public class Cliente {
             this.email = dados.email();
         if(dados.telefone() !=null && !dados.telefone().isBlank())
             this.telefone = dados.telefone();
+        if (dados.endereco() != null) {
+            this.endereco.atualizarEndereco(dados.endereco());
+        }
     }
 
     public void excluirCliente(){

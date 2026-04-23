@@ -30,7 +30,7 @@ public class ClienteController {
                 .map(DadosListagemCliente::new);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @Transactional
     public void atualizarCliente(@RequestBody @Valid DadosAtualizarCliente dados){
         var cliente = repository.getReferenceById(dados.id());
